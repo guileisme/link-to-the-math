@@ -21,8 +21,13 @@ public class ememy : MonoBehaviour
     {
         if (enemyHitpoints == 0)
         {
-            enemyAnimator.SetBool("isDead", true);
-            GameObject.Destroy(enemy);
+            Die();
         }
+    }
+
+    void Die ()
+    {
+            enemyAnimator.SetBool("isDead", true);
+            this.enabled = false;
     }
 }

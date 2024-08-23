@@ -22,7 +22,7 @@ public class playerMovement : MonoBehaviour
         animator.SetFloat("Vertical", movement.y);
 
         if (Math.Abs(movement.x) > 0 || Math.Abs(movement.y) > 0){
-            playerSpeed = 1.5f;
+            playerSpeed = 4f;
             animator.SetFloat("Speed", playerSpeed);
         }
 
