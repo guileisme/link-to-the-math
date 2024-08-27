@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ememy : MonoBehaviour
 {
+    public playerAttack1 player;
     public GameObject enemy;
     public Animator enemyAnimator;
     public BoxCollider2D boxCollider2D;
@@ -14,7 +16,10 @@ public class ememy : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        enemyHitpoints -= 2f;
+        if (player.isAttacking == true)
+        {
+            enemyHitpoints -= 2f;
+        }
     }
 
     void Update()
@@ -22,12 +27,17 @@ public class ememy : MonoBehaviour
         if (enemyHitpoints == 0)
         {
             Die();
+            Disappear();
         }
     }
 
     void Die ()
     {
             enemyAnimator.SetBool("isDead", true);
-            this.enabled = false;
+    }
+
+    void Disappear(){
+            enemy.SetActive(false);
+
     }
 }
