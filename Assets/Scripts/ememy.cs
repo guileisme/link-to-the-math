@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ememy : MonoBehaviour
 {
+    public player Player;
     public playerAttack1 player;
     public GameObject enemy;
     public Animator enemyAnimator;
@@ -12,13 +13,19 @@ public class ememy : MonoBehaviour
     public float enemyHitpoints;
     void Start()
     {
-        enemyHitpoints = 10f;
+        enemyHitpoints = 4f;
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (player.isAttacking == true)
         {
             enemyHitpoints -= 2f;
+        }
+
+        else
+        {
+            Player.hitpoints -= 1f;
+            Player.healthbar.setHealth(Player.hitpoints);
         }
     }
 
