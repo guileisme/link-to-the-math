@@ -9,7 +9,7 @@ public class playerMovement : MonoBehaviour
     public Rigidbody2D rigidBody;
     public Animator animator;
 
-    Vector2 movement;
+    public Vector2 movement;
 
     void Start () { 
         playerSpeed = 0f;

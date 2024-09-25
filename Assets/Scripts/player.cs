@@ -3,9 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.UI;   
+using TMPro;
 
 public class player : MonoBehaviour
 {
+    public TextMeshProUGUI lifepoints;
     public GameObject Player;
     public healthBar healthbar;
     public staminaBar staminabar;
@@ -19,9 +22,10 @@ public class player : MonoBehaviour
 
     void Start()
     {
-        hitpoints = 3f;
+        hitpoints = 10f;
         damage = 5f;
-        stamina = 5f;
+        stamina = 10f;
+        lifepoints.SetText("1");
         healthbar.setMaxHealth(hitpoints);
         healthbar.setHealth(hitpoints);
         staminabar.SetMaxStamina(stamina);
@@ -33,6 +37,8 @@ public class player : MonoBehaviour
         if (hitpoints == 0)
         {
             Player.SetActive(false);
+            lifepoints.SetText("0");
+
         }
 
         if (npc1.interactionPopup.canTalk == true && Input.GetKeyDown(KeyCode.E))
