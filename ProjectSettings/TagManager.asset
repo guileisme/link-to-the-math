@@ -47,3 +47,6 @@ TagManager:
   - name: characters
     uniqueID: 3606507795
     locked: 0
+  - name: jogador
+    uniqueID: 2302740017
+    locked: 0

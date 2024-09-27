@@ -17,7 +17,7 @@ public class puzzleController : MonoBehaviour
 
         // else
         // {
-        //     doorController.blocosFileira1[0] = 2;
+        //     doorController.blocosFileira[blocoOperacao.index] = 2;
         // }
     }
 }
